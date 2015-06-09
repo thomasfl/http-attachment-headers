@@ -1,0 +1,19 @@
+{
+  "name": "express-spike",
+  "version": "1.0.0",
+  "description": "Express server spike.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express",
+    "headers"
+  ],
+  "author": "Thomas Flemming",
+  "license": "Do what the fuck you want license (DWTFYWL).",
+  "dependencies": {
+    "express": "^4.12.4",
+    "express-jsxtransform": "^3.0.2"
+  }
+}
