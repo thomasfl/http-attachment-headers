@@ -29,7 +29,7 @@ app.get('/', function (req, res) {
  */
 function isIE9orIE10(request) {
     var ua = request.headers['user-agent'];
-    return (/MSIE 9\.0/.test(ua) || /MSIE 10\.0/.test(ua));
+    return (/MSIE (9|10)\.0/.test(ua));
 }
 
 app.get('/example.pdf', function (req, res) {
@@ -62,7 +62,7 @@ app.get('/example.pdf', function (req, res) {
 
 var port = 8080;
 
-console.log("Listening on port 8080");
+console.log('Listening on port ' + port);
 var server = app.listen(port, function () {
     var host = server.address().address;
     var port = server.address().port;
