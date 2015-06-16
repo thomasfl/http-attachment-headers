@@ -35,23 +35,26 @@ function isIE9orIE10(request) {
 app.get('/example.pdf', function (req, res) {
     var ua = req.headers['user-agent'];
     var headers = {
-        'Content-type': 'application/pdf'
+        /// 'Content-type': 'application/zzzzpdf',
+        'Content-Disposition': 'attachment; filename=\"INV1.pdf\"'
     };
-    if(isIE9orIE10(req)) {
-        headers = {
-            /* Make browsers download instead of displaying file:
-             http://en.wikipedia.org/wiki/MIME#Content-Disposition */
-            'Content-Disposition': 'attachment;filename="INV12345678.pdf"'
-            /* Some browsers support this too : */
-            /* 'Content-type': 'application-download' */
-        };
-    }
+
+    // if(isIE9orIE10(req)) {
+    //     headers = {
+    //         /* Make browsers download instead of displaying file:
+    //          http://en.wikipedia.org/wiki/MIME#Content-Disposition */
+    //         'Content-Disposition': 'attachment;filename="INV12345678.pdf"'
+    //         /* Some browsers support this too : */
+    //         /* 'Content-type': 'application-download' */
+    //     };
+    // }
 
     var options = {
         root: __dirname + '/',
         dotfiles: 'deny',
         headers: headers
     };
+    console.log(JSON.stringify(options.headers, null, 2));
     res.sendFile('example.pdf', options, function (err) {
         if (err) {
             console.log(err);
